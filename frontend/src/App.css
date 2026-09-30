@@ -1,0 +1,1408 @@
+/* =========================================================
+   PIXELFLUX
+   Professional Blue Glassmorphism UI
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  background: #020617;
+  color: #f8fafc;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+
+/* =========================================================
+   MAIN APP
+========================================================= */
+
+.app {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 20px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 50% 0%,
+      rgba(37, 99, 235, 0.17),
+      transparent 38%),
+    radial-gradient(circle at 0% 100%,
+      rgba(30, 64, 175, 0.12),
+      transparent 35%),
+    linear-gradient(135deg,
+      #020617 0%,
+      #071127 50%,
+      #020617 100%);
+}
+
+
+/* =========================================================
+   BACKGROUND LIGHT EFFECTS
+========================================================= */
+
+.app::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  top: -220px;
+  left: -160px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  filter: blur(140px);
+
+  opacity: 0.13;
+
+  pointer-events: none;
+}
+
+.app::after {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  right: -200px;
+  bottom: -230px;
+
+  border-radius: 50%;
+
+  background: #1d4ed8;
+
+  filter: blur(150px);
+
+  opacity: 0.12;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN GLASS CARD
+========================================================= */
+
+.card {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 760px;
+
+  padding: 42px;
+
+  border: 1px solid rgba(148, 163, 184, 0.14);
+
+  border-radius: 24px;
+
+  background:
+    rgba(15, 23, 42, 0.72);
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  animation: cardEnter 0.5s ease-out;
+}
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-bottom: 34px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   LOGO + BRAND NAME
+========================================================= */
+
+.header-brand {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(135deg,
+      #60a5fa,
+      #2563eb);
+
+  color: white;
+
+  font-size: 27px;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+
+  box-shadow:
+    0 10px 28px rgba(37, 99, 235, 0.3);
+}
+
+
+/* =========================================================
+   BRAND NAME
+========================================================= */
+
+.header h1 {
+  color: #f8fafc;
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -0.8px;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.header p {
+  margin-top: 4px;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   UPLOAD AREA
+========================================================= */
+
+.upload-area {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 285px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 40px 24px;
+
+  border: 1.5px dashed rgba(59, 130, 246, 0.4);
+
+  border-radius: 18px;
+
+  background:
+    rgba(15, 23, 42, 0.45);
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.upload-area:hover {
+  border-color: #3b82f6;
+
+  background:
+    rgba(30, 58, 138, 0.12);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   UPLOAD ICON
+========================================================= */
+
+.upload-icon {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 17px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(37, 99, 235, 0.12);
+
+  border: 1px solid rgba(59, 130, 246, 0.18);
+
+  color: #60a5fa;
+
+  font-size: 35px;
+
+  animation:
+    uploadFloat 3s ease-in-out infinite;
+}
+
+@keyframes uploadFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+
+/* =========================================================
+   UPLOAD TITLE
+========================================================= */
+
+.upload-area h2 {
+  color: #f1f5f9;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.25px;
+}
+
+
+/* =========================================================
+   UPLOAD DESCRIPTION
+========================================================= */
+
+.upload-area p {
+  margin-top: 8px;
+
+  margin-bottom: 24px;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   CHOOSE IMAGE BUTTON
+========================================================= */
+
+.choose-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 165px;
+
+  padding: 12px 22px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 650;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.22);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.choose-button:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 12px 26px rgba(37, 99, 235, 0.3);
+}
+
+.choose-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   SELECTED FILE
+========================================================= */
+
+.selected-file {
+  width: 100%;
+
+  max-width: 500px;
+
+  margin-top: 20px;
+
+  padding: 13px 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border: 1px solid rgba(148, 163, 184, 0.1);
+
+  border-radius: 9px;
+
+  background:
+    rgba(2, 6, 23, 0.55);
+
+  animation:
+    fileEnter 0.3s ease;
+}
+
+@keyframes fileEnter {
+  from {
+    opacity: 0;
+
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+.selected-file strong {
+  max-width: 360px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #e2e8f0;
+
+  font-size: 13px;
+}
+
+.selected-file span {
+  flex-shrink: 0;
+
+  color: #60a5fa;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SETTINGS
+========================================================= */
+
+.settings {
+  margin-top: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 27px;
+}
+
+
+/* =========================================================
+   INDIVIDUAL SETTING
+========================================================= */
+
+.setting {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+}
+
+
+/* =========================================================
+   SETTING HEADER
+========================================================= */
+
+.setting-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.setting-header label,
+.setting>label {
+  color: #cbd5e1;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.setting-header span {
+  padding: 4px 9px;
+
+  border-radius: 6px;
+
+  background:
+    rgba(37, 99, 235, 0.12);
+
+  color: #60a5fa;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   RANGE SLIDER
+========================================================= */
+
+input[type="range"] {
+  width: 100%;
+
+  height: 5px;
+
+  appearance: none;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(90deg,
+      #2563eb,
+      #3b82f6,
+      #334155);
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+
+  width: 17px;
+  height: 17px;
+
+  border-radius: 50%;
+
+  background: #60a5fa;
+
+  border: 3px solid #0f172a;
+
+  box-shadow:
+    0 0 0 2px #3b82f6;
+
+  cursor: pointer;
+
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+
+  border-radius: 50%;
+
+  background: #60a5fa;
+
+  border: 3px solid #0f172a;
+
+  box-shadow:
+    0 0 0 2px #3b82f6;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   RANGE LABELS
+========================================================= */
+
+.range-labels {
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #475569;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   FORMAT BUTTONS
+========================================================= */
+
+.format-buttons {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+}
+
+.format {
+  min-height: 44px;
+
+  padding: 10px;
+
+  border: 1px solid rgba(148, 163, 184, 0.14);
+
+  border-radius: 9px;
+
+  background:
+    rgba(15, 23, 42, 0.5);
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.format:hover {
+  border-color:
+    rgba(59, 130, 246, 0.6);
+
+  color: #dbeafe;
+
+  background:
+    rgba(37, 99, 235, 0.08);
+
+  transform: translateY(-1px);
+}
+
+.format.active {
+  border-color: #3b82f6;
+
+  background:
+    rgba(37, 99, 235, 0.18);
+
+  color: #bfdbfe;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(59, 130, 246, 0.15);
+}
+
+.format:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   COMPRESS BUTTON
+========================================================= */
+
+.compress-button {
+  position: relative;
+
+  width: 100%;
+
+  margin-top: 30px;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.22);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.compress-button:hover:not(:disabled) {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 14px 30px rgba(37, 99, 235, 0.3);
+}
+
+.compress-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.compress-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   STATUS MESSAGE
+========================================================= */
+
+.status {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 17px;
+
+  padding: 12px 14px;
+
+  border: 1px solid rgba(59, 130, 246, 0.16);
+
+  border-radius: 9px;
+
+  background:
+    rgba(37, 99, 235, 0.07);
+
+  color: #93c5fd;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+.status::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #60a5fa;
+
+  box-shadow:
+    0 0 10px rgba(96, 165, 250, 0.8);
+
+  animation:
+    pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error {
+  margin-top: 17px;
+
+  padding: 12px 14px;
+
+  border: 1px solid rgba(248, 113, 113, 0.18);
+
+  border-radius: 9px;
+
+  background:
+    rgba(127, 29, 29, 0.2);
+
+  color: #fca5a5;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.result {
+  position: relative;
+
+  margin-top: 24px;
+
+  padding: 25px;
+
+  border: 1px solid rgba(59, 130, 246, 0.2);
+
+  border-radius: 16px;
+
+  background:
+    rgba(15, 23, 42, 0.55);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  text-align: center;
+
+  animation:
+    resultEnter 0.4s ease;
+}
+
+@keyframes resultEnter {
+  from {
+    opacity: 0;
+
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+.result h2 {
+  margin-bottom: 20px;
+
+  color: #dbeafe;
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   RESULT STATISTICS
+========================================================= */
+
+.stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-bottom: 21px;
+}
+
+.stats div {
+  padding: 15px 8px;
+
+  border: 1px solid rgba(148, 163, 184, 0.09);
+
+  border-radius: 10px;
+
+  background:
+    rgba(2, 6, 23, 0.4);
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.stats div:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(59, 130, 246, 0.3);
+}
+
+.stats span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+.stats strong {
+  color: #e2e8f0;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DOWNLOAD BUTTON
+========================================================= */
+
+.download-button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: 1px solid rgba(96, 165, 250, 0.2);
+
+  border-radius: 9px;
+
+  background:
+    #1d4ed8;
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(29, 78, 216, 0.22);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.download-button:hover {
+  background: #1e40af;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 12px 25px rgba(29, 78, 216, 0.3);
+}
+
+.download-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  margin-top: 28px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(148, 163, 184, 0.07);
+
+  color: #475569;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .app {
+    padding: 35px 16px;
+  }
+
+  .card {
+    max-width: 680px;
+
+    padding: 32px;
+
+    border-radius: 22px;
+  }
+
+  .header {
+    margin-bottom: 30px;
+  }
+
+  .header h1 {
+    font-size: 27px;
+  }
+
+  .upload-area {
+    min-height: 275px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .app {
+    min-height: 100svh;
+
+    align-items: flex-start;
+
+    padding: 18px 10px;
+  }
+
+  .card {
+    width: 100%;
+
+    padding: 25px 16px;
+
+    border-radius: 19px;
+  }
+
+
+  /* Header */
+
+  .header {
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+  }
+
+  .header-brand {
+    gap: 10px;
+  }
+
+  .logo {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+  }
+
+  .header h1 {
+    font-size: 23px;
+
+    letter-spacing: -0.5px;
+  }
+
+  .header p {
+    margin-top: 0;
+
+    font-size: 10px;
+  }
+
+
+  /* Upload */
+
+  .upload-area {
+    min-height: 255px;
+
+    padding: 32px 14px;
+
+    border-radius: 16px;
+  }
+
+  .upload-icon {
+    width: 56px;
+    height: 56px;
+
+    margin-bottom: 15px;
+
+    border-radius: 15px;
+
+    font-size: 30px;
+  }
+
+  .upload-area h2 {
+    font-size: 18px;
+  }
+
+  .upload-area p {
+    max-width: 270px;
+
+    margin-top: 7px;
+
+    margin-bottom: 22px;
+
+    line-height: 1.5;
+  }
+
+
+  /* Selected File */
+
+  .selected-file {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+  .selected-file strong {
+    max-width: 100%;
+  }
+
+
+  /* Settings */
+
+  .settings {
+    margin-top: 27px;
+
+    gap: 24px;
+  }
+
+
+  /* Format Buttons */
+
+  .format-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .format {
+    min-height: 42px;
+  }
+
+
+  /* Compress */
+
+  .compress-button {
+    margin-top: 27px;
+
+    padding: 14px;
+  }
+
+
+  /* Result */
+
+  .result {
+    padding: 22px 15px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .app {
+    padding: 12px 8px;
+  }
+
+  .card {
+    padding: 22px 13px;
+
+    border-radius: 17px;
+  }
+
+  .header {
+    gap: 8px;
+
+    margin-bottom: 22px;
+  }
+
+  .header-brand {
+    gap: 9px;
+  }
+
+  .logo {
+    width: 43px;
+    height: 43px;
+
+    font-size: 21px;
+  }
+
+  .header h1 {
+    font-size: 21px;
+  }
+
+  .header p {
+    font-size: 9px;
+  }
+
+  .upload-area {
+    min-height: 235px;
+
+    padding: 27px 10px;
+  }
+
+  .upload-icon {
+    width: 52px;
+    height: 52px;
+
+    font-size: 28px;
+  }
+
+  .upload-area h2 {
+    font-size: 17px;
+  }
+
+  .upload-area p {
+    font-size: 12px;
+  }
+
+  .choose-button {
+    min-width: 145px;
+
+    padding: 11px 17px;
+
+    font-size: 13px;
+  }
+
+  .compress-button {
+    padding: 13px;
+
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .app {
+    padding: 70px 30px;
+  }
+
+  .card {
+    max-width: 780px;
+
+    padding: 46px;
+  }
+
+  .header {
+    margin-bottom: 36px;
+  }
+
+  .header h1 {
+    font-size: 31px;
+  }
+}
+
+
+/* =========================================================
+   VERY LARGE SCREENS
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .card {
+    max-width: 800px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+label:focus-visible {
+  outline: 2px solid #60a5fa;
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}
